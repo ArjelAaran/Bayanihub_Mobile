@@ -131,10 +131,42 @@ export const authStyles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "700",
   },
-  rowEnd: {
+  rowBetween: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%",
-    alignItems: "flex-end",
     marginBottom: 24,
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
+    borderRadius: 6,
+    borderWidth: 2,
+    borderColor: "#C5C5C5",
+    backgroundColor: COLORS.white,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 8,
+  },
+  checkboxChecked: {
+    backgroundColor: "#465997",
+    borderColor: "#465997",
+  },
+  checkboxCheckmark: {
+    width: 10,
+    height: 10,
+    borderRadius: 2,
+    backgroundColor: COLORS.white,
+  },
+  checkboxLabel: {
+    fontSize: 13,
+    color: "#465997",
+    fontWeight: "600",
   },
   link: {
     color: "#465997",

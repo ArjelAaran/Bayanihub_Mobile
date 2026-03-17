@@ -16,6 +16,7 @@ export function LoginScreen() {
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const validate = () => {
     let valid = true;
@@ -122,7 +123,18 @@ export function LoginScreen() {
         {passwordError ? <Text style={authStyles.errorText}>{passwordError}</Text> : null}
       </View>
 
-      <View style={authStyles.rowEnd}>
+      <View style={authStyles.rowBetween}>
+        <TouchableOpacity
+          style={authStyles.checkboxContainer}
+          onPress={() => setRememberMe(!rememberMe)}
+          activeOpacity={0.7}
+        >
+          <View style={[authStyles.checkbox, rememberMe && authStyles.checkboxChecked]}>
+            {rememberMe && <View style={authStyles.checkboxCheckmark} />}
+          </View>
+          <Text style={authStyles.checkboxLabel}>Remember Me</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity onPress={() => router.push("/forgot-password")}>
           <Text style={authStyles.link}>Forgot Password?</Text>
         </TouchableOpacity>
